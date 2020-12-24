@@ -25,5 +25,13 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(string(bytes))
+	fmt.Println("Print JSON: ", string(bytes))
+
+	var xp2 []person
+	err = json.Unmarshal(bytes, &xp2)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Back to struct", xp2)
 }
